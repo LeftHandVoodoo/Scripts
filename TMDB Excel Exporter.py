@@ -106,7 +106,7 @@ def company_name_to_id(api_key, company_names):
 
 # Main function
 def main():
-    api_key = "a0f5bfc6f9d507c024f76ed191d8e041"
+    api_key = "blah blah fuck off"
 
     release_year = input("Enter the desired release year (or leave blank for all years): ")
     genre_names = input("Enter the genre names separated by commas (or leave blank for all genres): ").split(",")
