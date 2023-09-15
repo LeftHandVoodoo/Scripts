@@ -27,7 +27,7 @@ import subprocess
 
 print("Imports loaded")
 
-PLEX_URL = 'http:/
+PLEX_URL = BLOWME@DARREN.FAG
 TOKEN = 
 
 print("Connecting to Plex server...")
