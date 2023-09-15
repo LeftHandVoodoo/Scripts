@@ -27,8 +27,8 @@ import subprocess
 
 print("Imports loaded")
 
-PLEX_URL = 'http://69.140.114.253:13163'
-TOKEN = 'd5MGkJKH31LDHTxG-XqU'
+PLEX_URL = 'http:/
+TOKEN = 
 
 print("Connecting to Plex server...")
 plex = PlexServer(PLEX_URL, TOKEN)
