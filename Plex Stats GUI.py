@@ -24,3 +24,7 @@ comparison_button.pack()
 
 # Run the Tkinter event loop
 root.mainloop()
+
+if __name__ == "__main__":
+    run_plex_movie_scraper()
+    run_comparison()
