@@ -13,6 +13,7 @@ Feel free to run the program and get an instant snapshot of your network storage
 
 '''
 
+import os
 import subprocess
 import re
 import tkinter as tk
@@ -25,6 +26,16 @@ def get_network_drive_stats():
     
     This function iterates over the network_paths list and retrieves the disk statistics for each network drive. It displays the drive label and a progress bar for each drive, indicating the percentage of disk space used. The function assumes that drive N has a total capacity of 12 TB, while all other drives have a total capacity of 8 TB. It uses the subprocess module to run the 'dir' command on each network drive and captures the output to extract the number of free bytes. It then calculates the amount of used and free disk space in TB and updates the total_all_drives_tb, used_all_drives_tb, and free_all_drives_tb variables accordingly. If the 'dir' command fails or the output does not contain the expected information, an error message is displayed. Finally, it calls the display_summary function to display the summary of the total, used, and free disk space for all network drives.
     """
+    network_paths = [
+        r'\\192.168.1.145\e',
+        r'\\192.168.1.145\f',
+        r'\\192.168.1.145\j',
+        r'\\192.168.1.145\k',
+        r'\\192.168.1.145\l',
+        r'\\192.168.1.145\m',
+        r'\\192.168.1.145\n'
+    ]
+
     for widget in frame.winfo_children():
         widget.destroy()
 
@@ -33,6 +44,7 @@ def get_network_drive_stats():
     free_all_drives_tb = 0
 
     for network_path in network_paths:
+        print(f"Getting stats for {network_path}...")
         label = ttk.Label(frame, text=f"Network Drive {network_path}", style='Header.TLabel')
         label.pack(fill=tk.X, pady=5)
 
@@ -118,16 +130,6 @@ print(f"Free size: {free_size} TB")
 display_summary(total_size, used_size, free_size)
 
 if __name__ == "__main__":
-    network_paths = [
-        r'\\192.168.1.145\e',
-        r'\\192.168.1.145\f',
-        r'\\192.168.1.145\j',
-        r'\\192.168.1.145\k',
-        r'\\192.168.1.145\l',
-        r'\\192.168.1.145\m',
-        r'\\192.168.1.145\n'
-    ]
-
     root = tk.Tk()
     root.title("Network Drive Stats")
 
